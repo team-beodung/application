@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ElinDrawer extends StatefulWidget {
-  final bool isLogin;
+class ElinDrawer extends StatelessWidget {
+  const ElinDrawer({super.key});
 
-  const ElinDrawer({super.key, this.isLogin = false});
-
-  @override
-  State<ElinDrawer> createState() => _ElinDrawer();
-}
-
-class _ElinDrawer extends State<ElinDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(

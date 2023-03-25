@@ -1,10 +1,10 @@
 import 'package:application/drawer.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   static const String _titleName = "Home page title";
 
-  const HomePage({super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

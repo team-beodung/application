@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "325765207932",
+    "project_id": "boilerplate-be543",
+    "storage_bucket": "boilerplate-be543.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325765207932:android:2ab274b3d905459f3f36f9",
+        "android_client_info": {
+          "package_name": "com.example.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325765207932-s3b3eg5krvb1ohvqqkpflhaq5tgq2mi1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1xz6WxW1_GggGX0xIDmwEbmS3CsBsy1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325765207932-r6dc3ck3f76q989r2jtu01ahu930houj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "325765207932-keola5v4d4c18nefeg0cg7n11rlpb4n6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.application"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

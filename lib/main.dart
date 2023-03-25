@@ -1,33 +1,35 @@
+import 'package:application/blocs/authenticatoin/authentication_bloc.dart';
+import 'package:application/infrastructure/firebase_user_repository.dart';
+import 'package:application/models/user.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get_it/get_it.dart';
+import 'package:logger/logger.dart';
 
-import 'home.dart';
+import 'firebase_options.dart';
+import 'app.dart';
 
-void main() {
+Future<void> main() async {
+  setUp();
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   runApp(const Application());
 }
 
-class Application extends StatelessWidget {
-  const Application({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Elin Application',
-      debugShowCheckedModeBanner: false,
-      home: const HomePage(),
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        primaryColor: Colors.red[900],
-        fontFamily: "Sans-serif",
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.normal,
-            color: Colors.black,
-          ),
-        ),
-      ),
-    );
-  }
+final getIt = GetIt.instance;
+void setUp() {
+  getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
+  getIt.registerLazySingleton<UserRepository>(() => FirebaseUserRepository());
+  getIt.registerLazySingleton<AuthenticationBloc>(() => AuthenticationBloc());
+  getIt.registerLazySingleton<Logger>(
+    () => Logger(
+      printer: PrettyPrinter(),
+    ),
+  );
 }
